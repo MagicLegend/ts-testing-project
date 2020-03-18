@@ -1,0 +1,17 @@
+{
+  // https://stackoverflow.com/a/37555279/7193940
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "outDir": "bin"
+  },
+  "include": [
+    "src",
+    "test",
+    "gulpfile.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "bin"
+  ]
+}

@@ -1,0 +1,12 @@
+# tmp
+.idea
+.DS_Store
+
+# lib
+node_modules
+
+# build
+bin/**/*.js
+bin/**/*.js.map
+bin/**/*.d.ts
+bin

@@ -1,0 +1,21 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      // "noUnusedLocals": true,
+      "sourceMap": true,
+      // "declaration": true,
+      "pretty": true,
+      "strictNullChecks": true,
+      "skipLibCheck": true,
+      "strictPropertyInitialization": true,
+      "outDir": ".nowhere", // Bogus value; this config should not be used to transpile. Prevents mixing of codebases.
+      // "rootDir": "src",
+      "allowJs": true,
+      // "checkJs": true
+    }
+}
