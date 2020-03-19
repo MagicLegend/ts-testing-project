@@ -25,7 +25,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Lint, compile and launch Program",
+            "name": "Transpile and launch Program",
             // "skipFiles": [
             //     "<node_internals>/**"
             // ],
@@ -39,7 +39,21 @@
             // },
             "sourceMaps": true,
             "runtimeVersion": "12.16.1",
-            "preLaunchTask": "gulp-transpile"
+            "preLaunchTask": "npm: transpile"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Start and Debug",
+            "preLaunchTask": "nb-tsc-watch",
+            "timeout": 10000,
+            "program": "${workspaceFolder}/src/index.ts",
+            "restart": true,
+            "cwd": "${workspaceRoot}",
+            "outFiles": [
+                "${workspaceFolder}/bin/**/*.js"
+            ],
+            "sourceMaps": true
         },
         {
             "type": "node",
@@ -58,5 +72,11 @@
             "internalConsoleOptions": "neverOpen",
             "protocol": "inspector"
         },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach to running node",
+            "port": 9229
+        }
     ]
 }

@@ -8,6 +8,7 @@ const notify = require('gulp-notify');
 const nodemon = require('gulp-nodemon');
 const changedInPlace = require('gulp-changed-in-place');
 const mocha = require('gulp-mocha');
+const debug = require('gulp-debug');
 
 const tsProject = tsc.createProject('tsconfig.dev.json');
 const tsTestProject = tsc.createProject('tsconfig.json');
@@ -44,18 +45,22 @@ gulp.task('eslint', () => gulp.src(config.allTypeScript)
 /**
  * Transpile all TypeScript in the project and store the output + sourcemaps in the config.tsOutputPath folder.
  */
-gulp.task('transpile-ts', () => tsProject.src()
-    // .pipe(changedInPlace({ firstPass: true }))
-    .on('finish', () => logger.info('Starting compilation...'))
-    .pipe(sourcemaps.init())
-    .on('finish', () => logger.info('Sourcemap init complete'))
-    .pipe(tsProject())
-    .on('finish', () => logger.info('tsProject complete'))
-    .pipe(sourcemaps.write('.', { sourceRoot: '.', includeContent: false }))
-    // .pipe(sourcemaps.write())
-    .on('finish', () => logger.info('Sourcemap write complete'))
-    .pipe(gulp.dest(config.tsOutputPath))
-    .on('finish', () => logger.info('Ts write complete')));
+gulp.task('transpile-ts', () => {
+    // tsProject.src()
+    return gulp.src('src/**/*.ts')
+        .pipe(debug())
+        // .pipe(changedInPlace({ firstPass: true }))
+        .pipe(tsProject())
+        .on('finish', () => logger.info('Starting compilation...'))
+        .pipe(sourcemaps.init())
+        .on('finish', () => logger.info('Sourcemap init complete'))
+        .on('finish', () => logger.info('tsProject complete'))
+        .pipe(sourcemaps.write('.', { includeContent: false }))
+        // .pipe(sourcemaps.write())
+        .on('finish', () => logger.info('Sourcemap write complete'))
+        .pipe(gulp.dest(config.tsOutputPath))
+        .on('finish', () => logger.info('Ts write complete'));
+});
 
 /**
  * Transpile all TypeScript in the project, including the tests.

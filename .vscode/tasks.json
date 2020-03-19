@@ -6,7 +6,7 @@
         {
             "label": "compile_ts",
             "type": "shell",
-            "command": "tsc --sourceMap --project tsconfig.json --outDir bin"
+            "command": "tsc --sourceMap --project tsconfig.dev.json --outDir bin"
         },
         {
             "label": "gulp-default",
@@ -28,6 +28,15 @@
             "label": "node-v",
             "type": "shell",
             "command": "which node && node -v"
+        },
+        {
+            "label": "nb-tsc-watch",
+            "type": "typescript",
+            "tsconfig": "tsconfig.dev.json",
+            "option": "watch",
+            "problemMatcher": [
+                "$tsc-watch"
+            ]
         }
     ]
 }

@@ -34,6 +34,7 @@ movies.get('/:id', async (req, res, next) => {
 movies.put('/:id', async (req, res, next) => {
     try {
         await Movie.update(req.body, { where: { id: req.params.id } });
+        console.log('Updated movie');
         res.sendStatus(200);
     } catch (e) {
         next(e);
