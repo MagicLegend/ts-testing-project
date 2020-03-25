@@ -6,29 +6,17 @@ import Actor from './Actor';
 import Genre from './Genre';
 import MovieGenre from './MovieGenre';
 
-@Scopes(() => ({
+@Scopes({
     cast: {
-        include: [{
-            model: Actor,
-            through: { attributes: [] },
-        }],
+        include: [() => Actor],
     },
     genre: {
-        include: [{
-            model: Genre,
-            through: { attributes: [] },
-        }],
+        include: [() => Genre],
     },
     full: {
-        include: [{
-            model: Actor,
-            through: { attributes: [] },
-        }, {
-            model: Genre,
-            through: { attributes: [] },
-        }],
+        include: [() => Actor, () => Genre],
     },
-}))
+})
 @Table
 export default class Movie extends Model<Movie> {
     @Column

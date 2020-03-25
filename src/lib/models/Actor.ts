@@ -4,16 +4,11 @@ import {
 import Movie from './Movie';
 import MovieActor from './MovieActor';
 
-@Scopes(() => ({
+@Scopes({
     movies: {
-        include: [
-            {
-                model: Movie,
-                through: { attributes: [] },
-            },
-        ],
+        include: [() => Movie],
     },
-}))
+})
 @Table
 export default class Actor extends Model<Actor> {
     @Column
