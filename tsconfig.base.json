@@ -13,6 +13,7 @@
       "strictNullChecks": true,
       "skipLibCheck": true,
       "strictPropertyInitialization": true,
+      // "esModuleInterop": true,
       "outDir": ".nowhere", // Bogus value; this config should not be used to transpile. Prevents mixing of codebases.
       // "rootDir": "src",
       "allowJs": true,

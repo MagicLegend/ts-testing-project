@@ -1,7 +1,8 @@
 import {
-    Table, Model, Column, Scopes, HasMany,
+    Table, Model, Column, Scopes, HasMany, BelongsToMany,
 } from 'sequelize-typescript';
 import A from './A';
+import { I } from './i';
 
 @Scopes({
     a: {
@@ -24,4 +25,7 @@ export default class T extends Model<T> {
 
     @HasMany(() => A)
     as?: A[];
+
+    @BelongsToMany(() => I, 'TI', 'tId', 'iId')
+    is?: any[];
 }
