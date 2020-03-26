@@ -31,6 +31,6 @@ export default class T extends Model<T> {
     @BelongsToMany(() => I, 'TI', 'tId', 'iId')
     is?: any[];
 
-    @BelongsToMany(() => P(sequelize, Sequelize), 'TI', 'tId', 'iId')
+    @BelongsToMany(() => P(sequelize, Sequelize), 'TP', 'tId', 'pId')
     ps?: any[];
 }
