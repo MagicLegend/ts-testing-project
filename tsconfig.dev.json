@@ -2,7 +2,7 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "allowJs": true,
-    "isolatedModules": true,
+    // "isolatedModules": true,
     "outDir": "bin",
     "sourceMap": true,
     // "baseUrl": "./"

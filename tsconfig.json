@@ -3,7 +3,7 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "allowJs": true,
-    "outDir": "bin"
+    "outDir": "bin.backup"
   },
   "include": [
     "src",
@@ -12,6 +12,6 @@
   ],
   "exclude": [
     "node_modules",
-    "bin"
+    "bin.backup"
   ]
 }

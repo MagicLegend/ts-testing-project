@@ -1,8 +1,10 @@
 import {
-    Table, Model, Column, Scopes, HasMany, BelongsToMany,
+    Table, Model, Column, Scopes, HasMany, BelongsToMany, Sequelize,
 } from 'sequelize-typescript';
 import A from './A';
 import { I } from './i';
+import * as P from './p';
+import { sequelize } from '../seq';
 
 @Scopes({
     a: {
@@ -28,4 +30,7 @@ export default class T extends Model<T> {
 
     @BelongsToMany(() => I, 'TI', 'tId', 'iId')
     is?: any[];
+
+    @BelongsToMany(() => P(sequelize, Sequelize), 'TI', 'tId', 'iId')
+    ps?: any[];
 }

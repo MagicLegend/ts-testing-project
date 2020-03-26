@@ -1,6 +1,4 @@
 import { Sequelize } from 'sequelize-typescript';
-import T from './models/T';
-import A from './models/A';
 
 // const sequelize = new Sequelize('testdb', 'root', 'testdb', {
 //     dialect: 'mysql',
@@ -12,7 +10,7 @@ import A from './models/A';
 //     models: [`${__dirname}/models`],
 // });
 
-const sequelize = new Sequelize({
+export const sequelize = new Sequelize({
     dialect: 'mysql',
     database: 'testdb',
     username: 'root',
@@ -21,7 +19,3 @@ const sequelize = new Sequelize({
     port: 3306,
     // modelPaths: [`${__dirname}/models`],
 });
-
-sequelize.addModels([A, T]);
-
-export default sequelize;

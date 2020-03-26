@@ -29,12 +29,9 @@ module.exports = (sequelize, DataTypes) => {
         createdAt: 'created_at',
         updatedAt: 'updated_at',
     });
-
     P.associate = (models) => {
         models.P.belongsTo(models.I, { sourceKey: 'i_id', foreignKey: 'i_id', as: 'i' });
     };
-
-    P.isInitialized = true;
-
     return P;
 };
+//# sourceMappingURL=p.js.map

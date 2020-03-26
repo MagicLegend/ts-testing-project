@@ -1,8 +1,6 @@
 const Sequelize = require('sequelize');
-const {sequelize} = require('../seq');
-
+const { sequelize } = require('../seq');
 const Op = Sequelize.Op;
-
 const I = sequelize.define('I', {
     id: {
         type: Sequelize.DataTypes.INTEGER(10),
@@ -36,12 +34,10 @@ const I = sequelize.define('I', {
         defaultValue: 0,
     },
 });
-
 // I.associate = function (models) {
 //     models.I.hasMany(models.I, {
 //         foreignKey: 'i_id_parent', as: 'subI', onDelete: 'cascade',
 //     });
-
 //     models.I.hasMany(models.P, {
 //         foreignKey: 'i_id',
 //         sourceKey: 'i_id',
@@ -52,7 +48,6 @@ const I = sequelize.define('I', {
 //         },
 //     });
 // };
-
 I.isInitialized = true;
-
 exports.I = I;
+//# sourceMappingURL=i.js.map
