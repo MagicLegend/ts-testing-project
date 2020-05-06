@@ -28,8 +28,8 @@ export default class T extends Model<T> {
     @HasMany(() => A)
     as?: A[];
 
-    @BelongsToMany(() => I, 'TI', 'tId', 'iId')
-    is?: any[];
+    // @BelongsToMany(() => I, 'TI', 'tId', 'iId')
+    // is?: any[];
 
     @BelongsToMany(() => P(sequelize, Sequelize), 'TP', 'tId', 'pId')
     ps?: any[];

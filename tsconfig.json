@@ -3,15 +3,14 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "allowJs": true,
-    "outDir": "bin.backup"
+    "outDir": "bin"
   },
   "include": [
     "src",
     "test",
-    "gulpfile.js"
   ],
   "exclude": [
     "node_modules",
-    "bin.backup"
+    "bin"
   ]
 }
