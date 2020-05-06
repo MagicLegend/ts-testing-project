@@ -2,7 +2,6 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "allowJs": true,
-    "isolatedModules": true,
     "outDir": "bin",
     "sourceMap": true,
     "noUnusedLocals": false, // Overrule base config because I'm lazy and I don't want it to yell at me every time 
