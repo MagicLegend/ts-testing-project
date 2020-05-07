@@ -17,6 +17,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
+            "console": "integratedTerminal",
             "outputCapture": "std", // Necessary to be able to see logging in the debug console
             "restart": true,
         },
