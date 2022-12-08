@@ -22,7 +22,7 @@
     "reflect-metadata": "^0.1.12",
     "sequelize": "^5.22.5",
     "sequelize-typescript": "^0.6.7-beta.1",
-    "strong-error-handler": "^2.3.0",
+    "strong-error-handler": "^4.0.1",
     "typescript": "^3.8.3"
   },
   "devDependencies": {
