@@ -20,7 +20,7 @@
     "mariadb": "^2.2.0",
     "mysql2": "^2.1.0",
     "reflect-metadata": "^0.1.12",
-    "sequelize": "^5.22.5",
+    "sequelize": "^6.28.2",
     "sequelize-typescript": "^0.6.7-beta.1",
     "strong-error-handler": "^4.0.1",
     "typescript": "^3.8.3"
